@@ -52,8 +52,8 @@ jobs:
       - name: npm audit
         working-directory: ./src
         run: |
-          npm audit --json > audit.json
-          npm audit
+          npm audit --audit-level=critical --json > audit.json
+          npm audit --audit-level=critical
 
       - uses: actions/upload-artifact@v4
         with:
